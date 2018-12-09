@@ -198,6 +198,19 @@ public class Cliente {
                         System.out.println("Estas son tus opciones disponibles ahora mismo: \n");
                         System.out.println(mensaje[1]);
                         break;
+                    case OpcionesSeleccion.CONFIRMATION:
+                        switch(estado){
+                            case NOLOG:
+                                estado=OpcionesEstado.LOG;
+                                break;
+                            case LOG:
+                                estado=OpcionesEstado.MODO;
+                            case MODO:
+                                estado=OpcionesEstado.PERSONAJES;
+                            case MODO2:
+                                estado=OpcionesEstado.LINEAPERSONAJES;
+                        }
+                        System.out.println(mensaje[1]);
                 }
             }    
         }

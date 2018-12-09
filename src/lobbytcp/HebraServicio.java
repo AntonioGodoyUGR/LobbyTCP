@@ -39,8 +39,19 @@ public class HebraServicio extends Thread{
             }
             switch(mensaje[0]){
                 case OpcionesSeleccion.USER:
-                    escritor.println("conectado con exito");
-                    
+                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "conectado con exito");
+                    break;
+                case OpcionesSeleccion.SELECTCHARACTER:
+                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "personaje seleccionado con exito");
+                    break;
+                case OpcionesSeleccion.SELECTCHARACTERANDLINE:
+                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "personaje y linea seleccionada con exito");
+                    break;
+                case OpcionesSeleccion.CHANGECHARACTER:
+                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "personaje cambiado correctamente");
+                    break;
+                case OpcionesSeleccion.SELECTMODE:
+                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "ha entrado en un modo de juego");
                     break;
             }
             

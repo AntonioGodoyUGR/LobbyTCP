@@ -18,5 +18,5 @@ public class OpcionesSeleccion {
     public static final String SENDMESSAGE = "SENDMESSAGE";
     public static final String CHANGECHARACTER = "CHANGECHARACTER";
     public static final String POSSIBILITIES = "POSSIBILITIES";
-    
+    public static final String CONFIRMATION = "CONFIRMATION";   
 }
