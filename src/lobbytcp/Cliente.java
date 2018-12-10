@@ -203,12 +203,15 @@ public class Cliente {
                             case NOLOG:
                                 estado=OpcionesEstado.LOG;
                                 break;
-                            case LOG:
+                            case LOG:   
                                 estado=OpcionesEstado.MODO;
+                                break;
                             case MODO:
                                 estado=OpcionesEstado.PERSONAJES;
+                                break;
                             case MODO2:
                                 estado=OpcionesEstado.LINEAPERSONAJES;
+                                break;
                         }
                         System.out.println(mensaje[1]);
                 }
@@ -235,7 +238,7 @@ public class Cliente {
     
     public static void main(String argv[]){
         
-        Cliente cliente = new Cliente(argv[1]);
+        Cliente cliente = new Cliente("antonio");
         
         try {
             cliente.socketCliente = new Socket(host, port);
@@ -249,6 +252,7 @@ public class Cliente {
             while(cliente.getConectado()){
                
             }
+            //cliente.comunicacionCliente();
             cliente.socketCliente.close();
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);

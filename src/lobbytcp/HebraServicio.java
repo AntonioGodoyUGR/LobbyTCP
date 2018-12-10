@@ -24,8 +24,8 @@ public class HebraServicio extends Thread{
     PrintWriter escritor;
     public HebraServicio(Socket sock) throws IOException{
         socket = sock;
-        BufferedReader lector = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintWriter escritor = new PrintWriter(socket.getOutputStream(),true);
+        lector = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        escritor = new PrintWriter(socket.getOutputStream(),true);
     }
     
     
