@@ -47,12 +47,35 @@ public class Cliente {
         String mimensaje= "";
         
         while(conectado){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            switch(estado){
+                case NOLOG:
+                    System.out.println("no estas conectado");
+                    break;
+                case LOG:
+                    System.out.println("Estas conectado");
+                    break;
+                case MODO:
+                    System.out.println("Selecciona tu personaje");
+                    break;
+                case MODO2:
+                    System.out.println("Selecciona tu personaje");
+                    break;
+                case SALA:
+                    System.out.println("Habla!");
+                    break;
+            }
+            
             Scanner scanner = new Scanner(System.in);
             opSelecion = scanner.nextLine().split("-");
                     
             switch(estado){
                 case NOLOG:
-                    System.out.println("no estas conectado");
+                    
                     switch(opSelecion[0]){
                         case OpcionesSeleccion.GOODBYE:
                             conectado=false;
@@ -71,7 +94,7 @@ public class Cliente {
                     }    
                     break;
                 case LOG:
-                    System.out.println("Estas conectado, puedes ver mi pollon");
+                    
                     switch(opSelecion[0]){
                         case OpcionesSeleccion.GOODBYE:
                             conectado=false;
@@ -90,7 +113,7 @@ public class Cliente {
                     }    
                     break;
                 case MODO:
-                    System.out.println("Selecciona tu personaje");
+                    
                     switch(opSelecion[0]){
                         case OpcionesSeleccion.GOODBYE:
                             conectado=false;
@@ -104,12 +127,12 @@ public class Cliente {
                             escritor.println(mimensaje);
                             break;
                         default:
-                            System.out.println("esa opcion no esta disponible, no inventes");
+                            System.out.println("esa opcion no esta disponible");
                             break;
                     }  
                     break;
                 case MODO2:
-                    System.out.println("Selecciona una linea y un personaje");
+                   
                     switch(opSelecion[0]){
                         case OpcionesSeleccion.GOODBYE:
                             conectado=false;
@@ -127,30 +150,9 @@ public class Cliente {
                             break;
                     }  
                     break;
-                /*case PERSONAJES:
-                    System.out.println("espera al resto de jugadores huevon");
-                    switch(opSelecion[0]){
-                        case OpcionesSeleccion.GOODBYE:
-                            conectado=false;
-                        break;    
-                        default:
-                            System.out.println("esa opcion no esta disponible");
-                            break;
-                    }  
-                    break;
-                case LINEAPERSONAJES:
-                    System.out.println("espera al resto de jugadores");
-                    switch(opSelecion[0]){
-                        case OpcionesSeleccion.GOODBYE:
-                            conectado=false;
-                        break; 
-                        default:
-                            System.out.println("esa opcion no esta disponible");
-                            break;
-                    }  
-                    break;*/
+                    
                 case SALA:
-                    System.out.println("Habla!");
+                    
                     switch(opSelecion[0]){
                         case OpcionesSeleccion.GOODBYE:
                             conectado=false;
@@ -173,7 +175,7 @@ public class Cliente {
                     }  
                     break;
                 default:
-                    System.out.println("eres subnormal, pues ya ves!");  
+                    System.out.println("ERROR INTERNO");  
                     break;
             }
             
@@ -214,6 +216,7 @@ public class Cliente {
                                 break;
                         }
                         System.out.println(mensaje[1]);
+                        break;
                 }
             }    
         }

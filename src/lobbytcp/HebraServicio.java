@@ -39,7 +39,7 @@ public class HebraServicio extends Thread{
             }
             switch(mensaje[0]){
                 case OpcionesSeleccion.USER:
-                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "conectado con exito");
+                    escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "Usuario autenticado con exito");
                     break;
                 case OpcionesSeleccion.SELECTCHARACTER:
                     escritor.println(OpcionesSeleccion.CONFIRMATION + "-" + "personaje seleccionado con exito");
